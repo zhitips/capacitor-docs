@@ -3,20 +3,21 @@ const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
 const { themes } = require('prism-react-renderer');
 
-const HOSTNAME = 'capacitorjs.com';
-const BASE_URL = '/docs';
+const HOSTNAME = 'zhitips.github.io';
+const BASE_URL = '/capacitor-docs/';
 
 module.exports = {
   title: 'Capacitor Documentation',
   tagline:
     'Capacitor is a cross-platform native runtime that makes it easy to build modern web apps that run natively on iOS, Android, and the Web.',
   url: `https://${HOSTNAME}`,
-  baseUrl: `${BASE_URL}/`,
+  baseUrl: BASE_URL,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-Hans'],
     localeConfigs: {
       en: { label: 'English' },
+      'zh-Hans': { label: '简体中文' },
     },
   },
   markdown: {
@@ -26,7 +27,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/meta/favicon.png',
-  organizationName: 'ionic-team',
+  organizationName: 'zhitips',
   projectName: 'capacitor-docs',
   themeConfig: {
     announcementBar: {
@@ -42,7 +43,7 @@ module.exports = {
       alt: 'Site Logo',
       src: `/logos/capacitor-text-docs-light.png`,
       srcDark: `/logos/capacitor-text-docs-dark.png`,
-      href: `https://${HOSTNAME}`,
+      href: `/`,
       target: '_self',
       width: 130,
       height: 24,
