@@ -27,4 +27,4 @@ Capacitor is a spiritual successor to [Apache Cordova](https://cordova.apache.or
 
 Getting started with Capacitor is easy! Capacitor can be dropped into any existing modern JavaScript project, or a fresh Capacitor project can be created from scratch.
 
-Follow the <a href="/docs/getting-started">Installation</a> guide to get started building your app.
+Follow the <a href="/getting-started">Installation</a> guide to get started building your app.
