@@ -5,6 +5,7 @@ const { themes } = require('prism-react-renderer');
 
 const HOSTNAME = 'zhitips.github.io';
 const BASE_URL = '/capacitor-docs/';
+const organization = 'zhitips';
 
 module.exports = {
   title: 'Capacitor Documentation',
@@ -27,7 +28,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'throw',
   favicon: 'img/meta/favicon.png',
-  organizationName: 'zhitips',
+  organizationName: organization,
   projectName: 'capacitor-docs',
   themeConfig: {
     announcementBar: {
@@ -272,7 +273,7 @@ module.exports = {
             const nativeRegexPath = nativeRegex.exec(docPath)?.[1];
 
             if (cliRegexPath) {
-              return `https://github.com/ionic-team/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
+              return `https://github.com/${organization}/capacitor-docs/edit/main/docs/cli/commands/${cliRegexPath.replace(
                 '-',
                 '/',
               )}.md`;
@@ -280,7 +281,14 @@ module.exports = {
             if (nativeRegexPath) {
               return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${nativeRegexPath}/index.ts`;
             }
-            return `https://github.com/ionic-team/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+
+            // 默认语言
+            if (locale === 'en') {
+              return `https://github.com/${organization}/capacitor-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+            }
+
+            // 多语言路径
+            return `https://github.com/${organization}/capacitor-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/current/${docPath}`;            
           },
           breadcrumbs: false,
           exclude: ['README.md'],
